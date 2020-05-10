@@ -1,0 +1,47 @@
+<?php
+/**
+ * @copyright Copyright © 2020 CreenSight. All rights reserved.
+ * @author CreenSight Development Team <magento@creensight.com>
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php 
+/**
+ * @var $block \CreenSight\GDPR\Block\CookieNotice
+ */
+?>
+
+<?php if ($block->isEnabled()): ?>
+    <div id="cs-cookie-notice">
+        <h4 class='title'><?php echo $block->getMessageTitle(); ?></h4>
+        <p class='content'><?php echo $block->getMessageContent(); ?></p>
+        <button class='btn-cookie btn-accept'><?php echo $block->getAcceptButtonText(); ?></button>
+        <a class='btn-cookie btn-more-info' href="<?php echo $block->getCMSPage(); ?>" target="_blank">
+            <?php echo $block->getMoreInfoButtonText(); ?>
+        </a>
+    </div>
+    <?php if($block->getCustomStyle()): ?>
+        <style type="text/css">
+            <?php echo $block->getCustomStyle(); ?>
+        </style>
+    <?php endif; ?>
+    <script type="text/x-magento-init">
+    {
+        "*": {
+            "CreenSight_GDPR/js/cookie_notice": {
+                "position" : <?php echo $block->getPosition(); ?>,
+                "backgroundColor" : "<?php echo $block->getBackgroundColor(); ?>;",
+                "titleColor" : "<?php echo $block->getTitleColor(); ?>",
+                "contentColor" : "<?php echo $block->getContentColor(); ?>",
+                "acceptButtonColor" : "<?php echo $block->getAcceptButtonColor(); ?>",
+                "acceptButtonBackgroundColor" : "<?php echo $block->getAcceptButtonBackgroundColor(); ?>",
+                "moreInfoBackgroundColor" : "<?php echo $block->getMoreInfoButtonBackgroundColor(); ?>",
+                "moreInfoColor" : "<?php echo $block->getMoreInfoButtonColor(); ?>",
+                "autoHideMessage" : "<?php echo $block->getHideMessage(); ?>"
+            }
+        }
+    }
+    </script>
+<?php endif; ?>

@@ -1,0 +1,18 @@
+<?php
+/**
+ * @copyright Copyright © 2020 CreenSight. All rights reserved.
+ * @author CreenSight Development Team <magento@creensight.com>
+ */
+
+/** @var \Magento\Framework\View\Element\Template $block */
+?>
+<p><?= /** @noEscape */ $block->escapeHtml(__('You will go to our homepage in 5 seconds.')) ?></p>
+<script>
+    require(["jquery", "mage/mage"], function ($) {
+        $($.mage.redirect(
+            "<?= /** @noEscape */ $block->escapeUrl($block->getUrl()) ?>",
+            "assign",
+            5000
+        ));
+    });
+</script>

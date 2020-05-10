@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright Copyright © 2020 CreenSight. All rights reserved.
+ * @author CreenSight Development Team <magento@creensight.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <gdpr>
+            <customer>
+                <account>
+                    <allow_delete_customer>1</allow_delete_customer>
+                    <delete_customer_message>Your account will be permanently deleted. Once you delete your account, there is no going back. Please be certain.</delete_customer_message>
+                </account>
+                <address>
+                    <allow_delete_default_address>1</allow_delete_default_address>
+                </address>
+            </customer>
+            <cookie_notice>
+                <general>
+                    <enabled>1</enabled>
+                    <hide_message>5</hide_message>
+                    <position>0</position>
+                </general>
+                <notice_message>
+                    <title>Approve The Cookies</title>
+                    <color>#ffffff</color>
+                    <content>This website uses cookies to improve your user experience</content>
+                    <content_color>#ffffff</content_color>
+                    <background>#222222</background>
+                </notice_message>
+                <accept_button>
+                    <text>Accept</text>
+                    <color>#ffffff</color>
+                    <background>#1979c3</background>
+                </accept_button>
+                <more_info_button>
+                    <text>Read more</text>
+                    <color>#ffdd16</color>
+                    <background>#222222</background>
+                </more_info_button>
+            </cookie_notice>
+        </gdpr>
+    </default>
+</config>

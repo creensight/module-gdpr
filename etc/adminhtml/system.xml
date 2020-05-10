@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright Copyright © 2020 CreenSight. All rights reserved.
+ * @author CreenSight Development Team <magento@creensight.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="gdpr" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>GDPR</label>
+            <tab>creensight</tab>
+            <resource>CreenSight_GDPR::configuration</resource>
+            <group id="customer" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Customer Configuration</label>
+                <group id="account" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Account</label>
+                    <field id="allow_delete_customer" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Allow Delete Customer Account</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="delete_customer_message" translate="label comment" type="textarea" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Delete Message</label>
+                        <comment>The message will be shown on Delete Account area. HTML code is allowed.</comment>
+                        <depends>
+                            <field id="allow_delete_customer">1</field>
+                        </depends>
+                    </field>
+                </group>
+                <group id="address" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Address</label>
+                    <field id="allow_delete_default_address" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Allow Delete Default Address</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                </group>
+            </group>
+            <group id="cookie_notice" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Cookie Notice Configuration</label>
+                <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>General</label>
+                    <field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Enable</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="hide_message" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Auto Hide Message (seconds)</label>
+                        <comment><![CDATA[Value must be greater than 0, leave blank will turn off auto hide.]]></comment>
+                        <validate>validate-greater-than-zero</validate>
+                    </field>
+                    <field id="position" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Position</label>
+                        <source_model>CreenSight\GDPR\Model\Config\Source\Position</source_model>
+                    </field>
+                </group>
+                <group id="notice_message" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notice Message</label>
+                    <field id="title" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Message Title</label>
+                    </field>
+                    <field id="color" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Title Text Color</label>
+                        <frontend_model>CreenSight\GDPR\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                    </field>
+                    <field id="content" translate="label comment" type="textarea" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Message</label>
+                        <comment><![CDATA[This config allows editing a message to offer visitors your website cookie information.]]></comment>
+                    </field>
+                    <field id="content_color" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Message Text Color</label>
+                        <frontend_model>CreenSight\GDPR\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                    </field>
+                    <field id="background" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Background Color</label>
+                        <frontend_model>CreenSight\GDPR\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                    </field>
+                </group>
+                <group id="accept_button" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Acceptance Button</label>
+                    <field id="text" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Text</label>
+                    </field>
+                    <field id="color" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Text Color</label>
+                        <frontend_model>CreenSight\GDPR\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                    </field>
+                    <field id="background" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Background Color</label>
+                        <frontend_model>CreenSight\GDPR\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                    </field>
+                </group>
+                <group id="more_info_button" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>More Information Button</label>
+                    <field id="text" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Text</label>
+                    </field>
+                    <field id="color" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Text Color</label>
+                        <frontend_model>CreenSight\GDPR\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                    </field>
+                    <field id="background" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Background Color</label>
+                        <frontend_model>CreenSight\GDPR\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+                    </field>
+                    <field id="cms_page" translate="label comment" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Page</label>
+                        <comment><![CDATA[The selected page will be interlinked with the more information button.]]></comment>
+                        <source_model>CreenSight\GDPR\Model\Config\Source\Page</source_model>
+                    </field>
+                </group>
+                <group id="custom_style" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Style</label>
+                    <field id="css" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>CSS</label>
+                    </field>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>

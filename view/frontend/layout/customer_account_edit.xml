@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright Copyright © 2020 CreenSight. All rights reserved.
+ * @author CreenSight Development Team <magento@creensight.com>
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="CreenSight\GDPR\Block\Account\Delete" name="gdpr_customer_delete_info" after="-" template="CreenSight_GDPR::account/edit/delete.phtml" ifconfig="gdpr/customer/enabled" />
+        </referenceContainer>
+    </body>
+</page>
